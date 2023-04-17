@@ -1,0 +1,25 @@
+#!/bin/bash
+sum="+"
+res="-"
+multi="*"
+divi="/"
+if [[ $# -eq 3 ]] ; then
+	a=$2
+	o=$1
+	c=$3
+	if [[ "$o" == "$sum" ]] ; then
+		echo "$((a+b))"
+	elif [[ "$o" == "$res" ]] ; then
+		echo "$((a-b))"
+	elif [[ "$o" == "$multi" ]] ; then
+		echo "$((a*b))"
+	elif [[ "$o" == "$divi" ]] ; then
+		echo "$((a/b))"
+	else
+		echo "Ingrese una operacion valida"
+		exit
+	fi
+else
+	echo "Ingrese correctamente los argumentos"
+	exit
+fi

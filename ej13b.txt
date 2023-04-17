@@ -1,0 +1,13 @@
+echo "Elija  la opcion : Listar, DondeEstoy o QuienEsta"
+read opcion
+case $opcion in
+	"Listar")
+		ls
+		;;
+	"DondeEstoy")
+		pwd
+		;;
+	"QuienEsta")
+		whoami
+		;;
+esac

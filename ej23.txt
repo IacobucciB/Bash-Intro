@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ $# -ne 0 ]
+then
+	echo "Cantidad de parametros incorrecta"
+	exit 1
+fi
+
+arreglo=(10 11 23 12 14)
+contador=0
+
+for i in ${arreglo[@]}
+do
+	let resto=$i%2
+	if [ $resto -eq 0 ]
+	then
+		echo $i
+	else
+		contador=$(($contador+1))
+	fi
+done
+echo $contador
+exit 0
+

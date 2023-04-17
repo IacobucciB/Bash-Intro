@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# usos del comando tr (translate)
+
+echo "cover lower case to upper case"
+
+cat greekfile | tr "[:lower:]" "[:upper:]"
+
+echo "convert white-space to tabs"
+cat greekfile | tr [:space:] '\t'
+
+echo "convert braces to parenthesis"
+cat greekfile | tr '{}' '()'
+
+echo "delete specified character using -d"
+cat greekfile | tr -d 'W'
+
+echo "remove all the digits from a string"
+cat greekfile | tr -d [:digit:] 
+
+echo "complement the set using -c"
+cat greekfile | tr -cd [:digit:]
+
+

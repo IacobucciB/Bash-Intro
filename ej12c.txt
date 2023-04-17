@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Obtener los numeros del usuario
+echo "Ingrese dos numeros : "
+read a
+read b
+
+# Obtener el tipo de operacion
+echo "Ingrese una opcion : "
+echo "1. Suma"
+echo "2. Resta"
+echo "3. Multi"
+echo "4. Divi"
+read ch
+
+# Switch Case para realizar la operacion
+case $ch in
+	1)res=$(echo $a + $b | bc)
+	;;
+	2)res=$(echo $a - $b | bc)
+	;;
+	3)res=$(echo $a \* $b | bc)
+	;;
+	4)res=$(echo "scale=2; $a / $b" | bc)
+	;;
+esac
+
+echo "Result $res"	

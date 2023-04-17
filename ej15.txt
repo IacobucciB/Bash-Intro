@@ -1,0 +1,34 @@
+Comando cut
+
+
+cut -b [n] file
+-b refiere a bytes, un char tab o espacio son 1 byte
+n refiere a la cantidad a cortar y pude expresarse como :
+-> 1,2,3 individualmente
+-> 1-7 un rango
+-> 1-4,5-7 varios rangos
+file refiere a que hay que pasarle un archivo como parametro
+
+cut -c [n] file
+-c se refiere a columnas
+n refiere a la cantidad a cortar y pude expresarse como :
+-> 1,2,3 individualmente
+-> 1-7 un rango
+-> 1-4,5-7 varios rangos
+
+cut -d " " -f [n] file
+-d referencia al limitador en este caso un espacio
+-> "-" separados por un guion
+-f referencia a fiel o campo sirve cuando los campos son de longitud variable
+a diferencia del -c donde se especifica el numero en concreto
+n refiere a la cantidad a cortar y pude expresarse como :
+-> 1,2,3 individualmente
+-> 1-7 un rango
+-> 1-4,5-7 varios rangos
+
+cut -b 1,3 state.txt 
+cut -b 1-3 state.txt 
+cut -c 1-3 state.txt
+cut -c 1-7 state.txt 
+cut -d " " -f 1 state.txt
+cut -d " " -f 2 state.txt 

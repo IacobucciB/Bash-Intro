@@ -1,0 +1,30 @@
+#!/bin/bash
+distros=(Debian Ubuntu Mint Manjaro Elementary)
+
+echo ${distros[@]}
+
+for i in "${distros[@]}"
+do
+	echo $i
+done
+
+echo ${distros[@]:1:3}
+
+echo ${#distros[@]}
+
+echo ${#distros[2]}
+
+distros=("${distros[@]}" Arch)
+echo ${distros[@]}
+
+borrar="Mint"
+distros=(${distros[@]/$borrar/})
+echo ${distros[@]}
+
+distros1=(Fedora CentOS)
+distros2=(PureOS Kali)
+
+distros12=(${distros1[@]} ${distros2[@]})
+unset distros12
+echo ${distros12[@]}
+

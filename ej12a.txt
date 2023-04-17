@@ -1,0 +1,28 @@
+#!/bin/bash
+if [[ $# -eq 2 ]] ; then
+	a=$1
+	b=$2
+	echo "1. Suma"
+	echo "2. Resta"
+	echo "3. Multi"
+	echo "4. Divi"
+	read ch
+	if [[ $ch -eq 1 ]] ; then
+		echo "$((a+b))"
+	elif [[ $ch -eq 2 ]] ; then
+		echo "$((a-b))"
+	elif [[ $ch -eq 3 ]] ; then
+		echo "$((a*b))"
+	elif [[ $ch -eq 4 ]] ; then
+		echo "$((a/b))"
+	else
+		echo "Ingrese una operacion valida"
+		exit
+	fi
+else
+	echo "Ingrese correctamente los argumentos"
+	exit
+fi
+
+
+		

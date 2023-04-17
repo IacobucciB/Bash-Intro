@@ -1,0 +1,17 @@
+#!/bin/bash
+cd "$1"
+if [ $2 = "-a" ] 
+then
+	for f in $(ls) 
+	do
+		mv -v "$f" "$f$3"
+	done
+fi
+if [ "$2" = "-b" ] 
+then
+	for f in $(ls) 
+	do
+		mv -v "$f" "$3$f"
+	done
+fi
+# cd $actual

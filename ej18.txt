@@ -1,0 +1,21 @@
+#!/bin/bash
+# recibe por parametro un nombre de usuario
+
+if [$# -ne 1 ]
+then
+	echo "cantidad de paramtreos incorrecta"
+	exit 1
+fi
+
+# se podria validar contra el /etc/passwd que el usuario exista
+
+while true
+do
+	seLogeo=$(who | grep $1 | wc -l)
+	if [ $seLogeo != 0 ]
+	then
+		echo "usuario $1 logeado"
+		exit 0
+	fi
+	sleep 10
+done
