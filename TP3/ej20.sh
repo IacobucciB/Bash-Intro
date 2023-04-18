@@ -1,26 +1,40 @@
 #!/bin/bash
 
-arreglo=($*)
+arreglo=()
 
 imprimir()
 {
-	echo "${arreglo[*]}"
+	echo "${arreglo[@]}"
 }
 
 largo()
 {
-	echo "${#arreglo[*]}"
+	echo "${#arreglo[@]}"
+}
+
+indices()
+{
+	echo "${!arreglo[@]}"
 }
 
 pop()
 {
 	unset arreglo[0]
+	arreglo=(${arreglo[@]})
 }
 
 push()
 {
 	read num
-	arreglo=("$num" "${arreglo[*]}")
+	arreglo=("$num" "${arreglo[@]}")
+}
+
+borrar_elemento()
+{
+	echo "Ingrese indice del elemento a borrar"
+	read num
+	unset arreglo[$num]
+	arreglo=(${arreglo[@]})
 }
 
 salir()
@@ -28,7 +42,7 @@ salir()
 	exit 0;
 }
 
-select opcion in imprimir largo push pop salir
+select opcion in imprimir largo indices pop push borrar_elemento salir
 do
 	$opcion
 done
